@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.3.10/seedrandom.js"></script>
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+
+var yyyy = today.getFullYear();
+var seed = ""+yyyy+mm+dd;
+var manger = ["KFC", "McDo", "BK"];
+
+Math.seedrandom(seed)
+
+function getManger() {
+   return manger[Math.floor(Math.random() * manger.length)];
+}
+</script>
+</head>
+<body>
+<h1 id="text" style="text-align:center; margin-top: 20%; font-size:10em;">Test</h1>
+<script>
+document.getElementById("text").innerHTML = getManger()
+</script>
+</body>
+</html>
